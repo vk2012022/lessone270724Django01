@@ -1,0 +1,42 @@
+{% load static %}
+<! doctype html>
+<html Lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    {% block title %}
+
+    {% endblock %}
+</head>
+<body>
+   <div class="container">
+        <div class="row">
+            <aside class="col-md-3">
+                <img src="{% static 'main/img/DALL·E 2024-04-07 14.06.01 .webp' %}" alt="котик на двух лапках" class="img-fluid">
+                <span>CatDjango</span>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'home' %}">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'page2' %}">Второстепенная</a>
+                    </li>
+                </ul>
+            </aside>
+            <main class="col-md-9">
+                {% block content %}
+                {% endblock %}
+            </main>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
