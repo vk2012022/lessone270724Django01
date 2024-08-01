@@ -10,9 +10,11 @@
 {% for new in news %}
 	<div>
 		<h3> {{ new.title }} </h3>
-		<p> {{ new.short_description }} </p>
+		<p>Краткое описание: {{ new.short_description }}</p>
+		<p>Текст: {{ new.text }}</p>
+		<p>Дата публикации: {{ new.pub_date }}</p>
+		<p>Пользователь: {{ new.username }}</p>
 	</div>
 {% endfor %}
-
 
 {% endblock %}
