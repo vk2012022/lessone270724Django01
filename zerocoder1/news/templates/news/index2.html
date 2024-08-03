@@ -1,0 +1,23 @@
+{% extends 'main/layoute.html' %}
+
+{% block title %}
+     <title>новостная страница</title>
+{% endblock %}
+
+{% block content %}
+
+<h1>новостная страница</h1>
+  {% if news %}
+    {% for new in news %}
+	   <div>
+		   <h3> {{ new.title }} </h3>
+		   <p>Краткое описание: {{ new.short_description }}</p>
+		   <p>Текст: {{ new.text }}</p>
+		   <p>Дата публикации: {{ new.pub_date }}</p>
+		   <p>Пользователь: {{ new.username }}</p>
+	   </div>
+    {% endfor %}
+  {% else %}
+		<h4>Новостей ещё нет.</h4>
+  {% endif %}
+{% endblock %}
